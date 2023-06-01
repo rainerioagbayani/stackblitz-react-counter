@@ -1,10 +1,7 @@
 import { useState } from 'react';
 import React from 'react';
 
-const Display = ({ counter }) => <div>{counter}</div>;
-
-const Button = ({ handleClick, text }) => <button onClick={handleClick}>{text}</button>
-
+// Parent Component
 const App = () => {
   const [counter, setCounter] = useState(0);
   console.log('rendering with counter value', counter);
@@ -30,5 +27,12 @@ const App = () => {
     </div>
   );
 };
+
+// Children Component
+const Display = ({ counter }) => <div>{counter}</div>;
+
+const Button = ({ handleClick, text }) => (
+  <button onClick={handleClick}>{text}</button>
+);
 
 export default App;
