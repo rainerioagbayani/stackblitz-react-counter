@@ -1,6 +1,13 @@
 import { useState } from 'react';
 import React from 'react';
 
+// Children Component
+const Display = ({ counter }) => <div>{counter}</div>;
+
+const Button = ({ handleClick, text }) => (
+  <button onClick={handleClick}>{text}</button>
+);
+
 // Parent Component
 const App = () => {
   const [counter, setCounter] = useState(0);
@@ -27,12 +34,5 @@ const App = () => {
     </div>
   );
 };
-
-// Children Component
-const Display = ({ counter }) => <div>{counter}</div>;
-
-const Button = ({ handleClick, text }) => (
-  <button onClick={handleClick}>{text}</button>
-);
 
 export default App;
